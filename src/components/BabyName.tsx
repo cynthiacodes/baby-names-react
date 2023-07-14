@@ -1,3 +1,4 @@
+import { babyNameData } from "../utils/babyNameData";
 export function BabyName(): JSX.Element {
   return (
     <>
