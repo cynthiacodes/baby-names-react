@@ -24,12 +24,16 @@ const [inputName, setInputName]= useState<string>();
   return (
     <>
       <h1>Baby Name App</h1>
+      <div className="mainGrid">
       <input
+      className="searchBar"
       placeholder="Search Baby Name"
       onChange={(e) => setInputName(e.target.value)}
       value={inputName}
       ></input>
-      <div>{buttonsOfNames}</div>
+      <hr />
+      {buttonsOfNames}
+      </div>
     </>
   );
 }
