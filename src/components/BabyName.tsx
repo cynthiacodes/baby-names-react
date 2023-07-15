@@ -35,7 +35,7 @@ export function BabyName(): JSX.Element {
           onChange={handleQuery}
           value={query}
         />
-        <hr className="hrGridItem" />
+        <hr />
         <div className="nameButtons">{buttonsOfNames}</div>
       </div>
     </>
