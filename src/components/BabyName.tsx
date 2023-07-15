@@ -6,7 +6,9 @@ import "./BabyApp.css";
 export function BabyName(): JSX.Element {
 const [inputName, setInputName]= useState<string>();
 
-
+const handleChange = (event:React.ChangeEvent<HTMLInputElement> ) => {
+     setInputName(event.target.value)
+}
 
   const buttonsOfNames = babyNameData.map((baby) => (
     <button
@@ -19,7 +21,6 @@ const [inputName, setInputName]= useState<string>();
 
   const sortNames = babyNameData.sort(ascOrder);
 
-  console.log(sortNames);
 
   return (
     <>
@@ -28,7 +29,7 @@ const [inputName, setInputName]= useState<string>();
       <input
       className="searchBar"
       placeholder="Search Baby Name"
-      onChange={(e) => setInputName(e.target.value)}
+      onChange={handleChange}
       value={inputName}
       ></input>
       <hr />
