@@ -4,7 +4,7 @@ interface Baby {
     sex: string;
 }
 
-export function compareNames(a:Baby, b:Baby): number {
+export function ascOrder(a:Baby, b:Baby): number {
   if (a.name < b.name) {
     return -1;
   }

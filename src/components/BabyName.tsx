@@ -1,12 +1,12 @@
 import { babyNameData } from "../utils/babyNameData";
-import { compareNames } from "../utils/compareNames";
+import { ascOrder } from "../utils/ascOrder";
 
 export function BabyName(): JSX.Element {
   const listOfNames = babyNameData.map((object) => (
     <button key={object.id}>{object.name}</button>
   ));
 
-  const sortNames = babyNameData.sort(compareNames);
+  const sortNames = babyNameData.sort(ascOrder);
 
   console.log(sortNames);
 
