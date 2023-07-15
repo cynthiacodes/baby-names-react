@@ -4,13 +4,17 @@ import { ascOrder } from "../utils/ascOrder";
 import "./BabyApp.css";
 
 export function BabyName(): JSX.Element {
-  const [query, setQuery] = useState<string>();
+  const [query, setQuery] = useState<string>("");
 
   const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
+  
+  const sortNames = babyNameData.sort(ascOrder);
+  
+  const filteredSearchData = babyNameData.filter(baby => baby.name.toLowerCase().includes(query));
 
-  const buttonsOfNames = babyNameData.map((baby) => (
+  const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
@@ -19,7 +23,6 @@ export function BabyName(): JSX.Element {
     </button>
   ));
 
-  const sortNames = babyNameData.sort(ascOrder);
 
   return (
     <>
