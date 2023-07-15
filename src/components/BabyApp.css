@@ -1,6 +1,7 @@
 .femaleName {
   background-color: #ffe181;
   border-radius: 12px;
+  font-size: 16px;
 }
 
 .femaleName:hover {
@@ -11,9 +12,19 @@
 .maleName {
   background-color: #eee9e5;
   border-radius: 12px;
+  font-size: 16px;
 }
 
 .maleName:hover {
   background-color: #d0ecea;
   color: #44749d;
+}
+
+h1 {
+  color: #ffba7f;
+  text-align: center;
+}
+
+body {
+  background-color: #fffee4;
 }
