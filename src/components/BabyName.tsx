@@ -9,10 +9,12 @@ export function BabyName(): JSX.Element {
   const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
-  
+
   const sortNames = babyNameData.sort(ascOrder);
-  
-  const filteredSearchData = babyNameData.filter(baby => baby.name.toLowerCase().includes(query));
+
+  const filteredSearchData = babyNameData.filter((baby) =>
+    baby.name.toLowerCase().includes(query)
+  );
 
   const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
@@ -22,7 +24,6 @@ export function BabyName(): JSX.Element {
       {baby.name}
     </button>
   ));
-
 
   return (
     <>
