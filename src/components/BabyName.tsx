@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { babyNameData } from "../utils/babyNameData";
+import { babyNamesData } from "../utils/babyNamesData";
 import { ascOrder } from "../utils/ascOrder";
 import "./BabyApp.css";
 
@@ -10,9 +10,9 @@ export function BabyName(): JSX.Element {
     setQuery(event.target.value);
   };
 
-  const sortNames = babyNameData.sort(ascOrder);
+  const sortedBabyData = babyNamesData.sort(ascOrder);
 
-  const filteredSearchData = babyNameData.filter((baby) =>
+  const filteredSearchData = sortedBabyData.filter((baby) =>
     baby.name.toLowerCase().includes(query)
   );
 
