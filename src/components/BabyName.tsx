@@ -6,7 +6,7 @@ import "./BabyApp.css";
 export function BabyName(): JSX.Element {
 const [inputName, setInputName]= useState<string>();
 
-const handleChange = (event:React.ChangeEvent<HTMLInputElement> ) => {
+const handleSearchInput = (event:React.ChangeEvent<HTMLInputElement> ) => {
      setInputName(event.target.value)
 }
 
@@ -29,7 +29,7 @@ const handleChange = (event:React.ChangeEvent<HTMLInputElement> ) => {
       <input
       className="searchBar"
       placeholder="Search Baby Name"
-      onChange={handleChange}
+      onChange={handleSearchInput}
       value={inputName}
       ></input>
       <hr />
