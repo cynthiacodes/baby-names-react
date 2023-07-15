@@ -4,7 +4,12 @@ import "./BabyApp.css";
 
 export function BabyName(): JSX.Element {
   const listOfNames = babyNameData.map((baby) => (
-    <button className = {baby.sex === "f"? "femaleName": "maleName"}key={baby.id}>{baby.name}</button>
+    <button
+      className={baby.sex === "f" ? "femaleName" : "maleName"}
+      key={baby.id}
+    >
+      {baby.name}
+    </button>
   ));
 
   const sortNames = babyNameData.sort(ascOrder);

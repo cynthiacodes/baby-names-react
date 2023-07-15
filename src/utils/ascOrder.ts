@@ -1,10 +1,10 @@
 interface Baby {
-    id: number; 
-    name: string; 
-    sex: string;
+  id: number;
+  name: string;
+  sex: string;
 }
 
-export function ascOrder(a:Baby, b:Baby): number {
+export function ascOrder(a: Baby, b: Baby): number {
   if (a.name < b.name) {
     return -1;
   }
