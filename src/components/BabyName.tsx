@@ -4,10 +4,10 @@ import { ascOrder } from "../utils/ascOrder";
 import "./BabyApp.css";
 
 export function BabyName(): JSX.Element {
-  const [inputName, setInputName] = useState<string>();
+  const [query, setQuery] = useState<string>();
 
-  const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputName(event.target.value);
+  const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
   };
 
   const buttonsOfNames = babyNameData.map((baby) => (
@@ -28,8 +28,8 @@ export function BabyName(): JSX.Element {
         <input
           className="searchBar"
           placeholder="Search Baby Name"
-          onChange={handleSearchInput}
-          value={inputName}
+          onChange={handleQuery}
+          value={query}
         />
         <hr />
         <div className="nameButtons">{buttonsOfNames}</div>
