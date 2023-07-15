@@ -1,7 +1,21 @@
 .femaleName {
-  color: pink;
+  background-color: #ffe181;
+  border-radius: 12px;
+}
+
+.femaleName:hover {
+  background-color: #ffeaf2;
+  color: #e08e79;
 }
 
 .maleName {
-  color: aqua;
+  background-color: #eee9e5;
+  border-radius: 12px;
 }
+
+.maleName:hover {
+  background-color:#d0ecea;
+  color: #44749d;
+}
+
+
