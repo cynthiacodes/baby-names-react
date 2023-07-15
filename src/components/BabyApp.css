@@ -38,4 +38,21 @@ input {
   width: 20%;
   text-align: center;
 }
+.femaleName,
+.maleName {
+  padding: 10px 10px 10px 10px;
+}
 
+.mainGrid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.nameButtons {
+  grid-gap: 5px;
+  border: 2px solid #fad3b2;
+  padding: 10px;
+  border-radius: 5px;
+}
