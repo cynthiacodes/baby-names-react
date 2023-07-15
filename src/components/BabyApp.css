@@ -20,6 +20,11 @@
   color: #44749d;
 }
 
+.femaleName,
+.maleName {
+  padding: 10px 10px 10px 10px;
+}
+
 h1 {
   color: #ffba7f;
   text-align: center;
@@ -37,10 +42,13 @@ input {
   border: 2px solid #fad3b2;
   width: 20%;
   text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
 }
-.femaleName,
-.maleName {
-  padding: 10px 10px 10px 10px;
+
+input:focus {
+  border: 3px solid #eee9e5;
 }
 
 .mainGrid {
