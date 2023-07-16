@@ -30,6 +30,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: #ffba7f;
+  text-align: left;
+}
 body {
   background-color: #fffee4;
 }
@@ -62,7 +66,7 @@ input:focus {
 
 .mainGrid {
   display: grid;
-  place-items: center;
+  /* place-items: center; */
   grid-template-columns: 1fr;
   grid-gap: 10px;
 }
