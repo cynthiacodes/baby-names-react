@@ -5,7 +5,7 @@ import "./BabyApp.css";
 
 export function BabyName(): JSX.Element {
   const [query, setQuery] = useState<string>("");
-  const [favourite, setFavourite]= useState<string[]>([""]);
+  const [favourite, setFavourite] = useState<string[]>([""]);
 
   const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
@@ -20,9 +20,9 @@ export function BabyName(): JSX.Element {
   const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
       onClick={() => {
-        console.log(`button ${baby.name} have been clicked`, baby.name)
-        setFavourite((prevNames) =>[...prevNames,baby.name])
-    }}
+        console.log(`button ${baby.name} have been clicked`, baby.name);
+        setFavourite((prevNames) => [...prevNames, baby.name]);
+      }}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
