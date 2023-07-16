@@ -20,7 +20,7 @@ export function BabyName(): JSX.Element {
   );
   const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
-      onClick={() => handleFaveClick(baby)}
+      onClick={() => moveToFaveClick(baby)}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
@@ -31,7 +31,7 @@ export function BabyName(): JSX.Element {
     setQuery(event.target.value);
   };
 
-  const handleFaveClick = (baby: Baby) => {
+  const moveToFaveClick = (baby: Baby) => {
     setFavourite((prevFaves) => [...prevFaves, baby]);
     setBabyNames((prevNames) =>
       prevNames.filter((babyInfo) => babyInfo.name !== baby.name)
