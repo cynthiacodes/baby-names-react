@@ -3,12 +3,23 @@ import { babyNamesData } from "../utils/babyNamesData";
 import { ascOrder } from "../utils/ascOrder";
 import "./BabyApp.css";
 
+interface Baby {
+  id: number;
+  name: string;
+  sex: string;
+}
+
 export function BabyName(): JSX.Element {
   const [query, setQuery] = useState<string>("");
   const [favourite, setFavourite] = useState<string[]>([""]);
 
   const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
+  };
+
+  const handleClick = (baby: Baby) => {
+    console.log(`button ${baby.name} have been clicked`, baby.name);
+    setFavourite((prevNames) => [...prevNames, baby.name]);
   };
 
   const sortedBabyData = babyNamesData.sort(ascOrder);
@@ -19,10 +30,7 @@ export function BabyName(): JSX.Element {
 
   const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
-      onClick={() => {
-        console.log(`button ${baby.name} have been clicked`, baby.name);
-        setFavourite((prevNames) => [...prevNames, baby.name]);
-      }}
+      onClick={() => handleClick(baby)}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
