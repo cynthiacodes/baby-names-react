@@ -38,8 +38,16 @@ export function BabyName(): JSX.Element {
     );
   };
 
+  const moveToMainList = (baby: Baby) => {
+    setBabyNames((prevNames) => [...prevNames, baby]);
+    setFavourite((prevFaves) =>
+      prevFaves.filter((babyInfo) => babyInfo.name !== baby.name)
+    );
+  };
+
   const faveNamesButtons = favourite.map((baby) => (
     <button
+      onClick={() => moveToMainList(baby)}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
