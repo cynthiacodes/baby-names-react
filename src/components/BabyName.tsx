@@ -18,6 +18,7 @@ export function BabyName(): JSX.Element {
 
   const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
+      onClick={() => console.log(`button ${baby.name} have been clicked`)}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
@@ -35,6 +36,7 @@ export function BabyName(): JSX.Element {
           onChange={handleQuery}
           value={query}
         />
+        <h2>Favourite:</h2>
         <hr />
         <div className="nameButtons">{buttonsOfNames}</div>
       </div>
