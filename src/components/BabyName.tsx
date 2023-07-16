@@ -10,11 +10,11 @@ interface Baby {
 }
 
 export function BabyName(): JSX.Element {
-  const [babyName, setBabyName] = useState<Baby[]>(babyNamesData);
+  const [babyNames, setBabyNames] = useState<Baby[]>(babyNamesData);
   const [query, setQuery] = useState<string>("");
   const [favourite, setFavourite] = useState<Baby[]>([]);
 
-  const sortedBabyData = babyName.sort(ascOrder);
+  const sortedBabyData = babyNames.sort(ascOrder);
   const filteredSearchData = sortedBabyData.filter((baby) =>
     baby.name.toLowerCase().includes(query)
   );
@@ -32,9 +32,8 @@ export function BabyName(): JSX.Element {
   };
 
   const handleFaveClick = (baby: Baby) => {
-    console.log(`button ${baby.name} have been clicked`, baby);
     setFavourite((prevFaves) => [...prevFaves, baby]);
-    setBabyName((prevNames) =>
+    setBabyNames((prevNames) =>
       prevNames.filter((babyInfo) => babyInfo.name !== baby.name)
     );
   };
