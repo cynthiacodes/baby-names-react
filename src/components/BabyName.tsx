@@ -10,27 +10,37 @@ interface Baby {
 }
 
 export function BabyName(): JSX.Element {
+  const [babyName, setBabyName] = useState<Baby[]>(babyNamesData);
   const [query, setQuery] = useState<string>("");
-  const [favourite, setFavourite] = useState<string[]>([""]);
+  const [favourite, setFavourite] = useState<Baby[]>([]);
 
+  const sortedBabyData = babyName.sort(ascOrder);
+  const filteredSearchData = sortedBabyData.filter((baby) =>
+    baby.name.toLowerCase().includes(query)
+  );
+  const buttonsOfNames = filteredSearchData.map((baby) => (
+    <button
+      onClick={() => handleFaveClick(baby)}
+      className={baby.sex === "f" ? "femaleName" : "maleName"}
+      key={baby.id}
+    >
+      {baby.name}
+    </button>
+  ));
   const handleQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
 
-  const handleClick = (baby: Baby) => {
-    console.log(`button ${baby.name} have been clicked`, baby.name);
-    setFavourite((prevNames) => [...prevNames, baby.name]);
+  const handleFaveClick = (baby: Baby) => {
+    console.log(`button ${baby.name} have been clicked`, baby);
+    setFavourite((prevFaves) => [...prevFaves, baby]);
+    setBabyName((prevNames) =>
+      prevNames.filter((babyInfo) => babyInfo.name !== baby.name)
+    );
   };
 
-  const sortedBabyData = babyNamesData.sort(ascOrder);
-
-  const filteredSearchData = sortedBabyData.filter((baby) =>
-    baby.name.toLowerCase().includes(query)
-  );
-
-  const buttonsOfNames = filteredSearchData.map((baby) => (
+  const faveNamesButtons = favourite.map((baby) => (
     <button
-      onClick={() => handleClick(baby)}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
@@ -48,7 +58,7 @@ export function BabyName(): JSX.Element {
           onChange={handleQuery}
           value={query}
         />
-        <h2>Favourite:{favourite}</h2>
+        <h2>Favourite:{faveNamesButtons}</h2>
         <hr />
         <div className="nameButtons">{buttonsOfNames}</div>
       </div>
