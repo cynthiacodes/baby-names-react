@@ -72,11 +72,11 @@ input:focus {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
   grid-template-areas:
-    " .  s   . ."
-    " .  fil . ."
-    " .  f  .  ."
-    " .  l  .  . "
-    " .  b  .  .";
+    " s  s  s  s"
+    " .  a  g  b"
+    " f  f  f  f "
+    " l  l  l  l "
+    " b  b  b  b";
 }
 
 .nameButtons {
@@ -94,8 +94,11 @@ input:focus {
 }
 
 .filter {
-  justify-self: center;
+  /* justify-self: center; */
   grid-area: fil;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 20%;
 }
 
 .searchBar {
@@ -106,3 +109,14 @@ input:focus {
   grid-area: l;
 }
 
+#girlButton{
+    grid-area: g;
+}
+
+#boyButton{
+    grid-area: b;
+}
+
+#allButton{
+    grid-area: a;
+}
