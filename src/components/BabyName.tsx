@@ -59,9 +59,14 @@ export function BabyName(): JSX.Element {
 
   const filterGenderButtons = filterButtons.map((button) => (
     <>
-    <button id = {buttonId(button)} className="filter" key={button.name} value={button.gender}>
-     {button.name}
-    </button>
+      <button
+        id={buttonId(button)}
+        className="filter"
+        key={button.name}
+        value={button.gender}
+      >
+        <img src={button.icon} alt="" />
+      </button>
     </>
   ));
 
