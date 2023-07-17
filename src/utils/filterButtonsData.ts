@@ -5,7 +5,7 @@ export const filterButtons = [{
 },
 {
     name: "Boys",
-    gender: "f",
+    gender: "m",
     icon: "../public/buttonIcons/blue-bird.png", 
 },
 {
