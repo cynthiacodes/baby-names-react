@@ -70,10 +70,9 @@ input:focus {
 .mainGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
   grid-template-areas:
     " s  s  s  s"
-    " .  g  m  a"
+    " a  g  m  ."
     " f  f  f  f "
     " l  l  l  l "
     " b  b  b  b";
@@ -93,13 +92,15 @@ input:focus {
   grid-area: f;
 }
 
-/* .filter {
-  /* justify-self: center; */
-  /* grid-area: fil;
-  font-size: 16px;
-  border-radius: 12px;
-  width: 20%;
- */ 
+.filter {
+  background-color: inherit;
+  border: none;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+}
 
 .searchBar {
   grid-area: s;
@@ -111,12 +112,16 @@ input:focus {
 
 #girlButton {
   grid-area: g;
+  margin-right: -15px;
+  justify-self: end;
 }
 
 #boyButton {
   grid-area: m;
+  justify-self: end;
 }
 
 #allButton {
   grid-area: a;
+  justify-self: end;
 }
