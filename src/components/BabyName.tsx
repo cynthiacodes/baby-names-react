@@ -65,7 +65,7 @@ export function BabyName(): JSX.Element {
         key={button.name}
         value={button.gender}
       >
-        <img src={button.icon} alt="" />
+        <img  className = "icon" src={button.icon} alt="" />
       </button>
     </>
   ));
