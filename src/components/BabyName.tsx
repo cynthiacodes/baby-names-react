@@ -57,16 +57,17 @@ export function BabyName(): JSX.Element {
 
   return (
     <>
-      <h1>Baby Name App</h1>
+      <h1>Baby Names App</h1>
       <div className="mainGrid">
         <input
           className="searchBar"
           placeholder="Search Baby Name"
           onChange={handleQuery}
           value={query}
-        />
-        <h2>Favourite:{faveNamesButtons}</h2>
-        <hr />
+        />{" "}
+        <button className="filter">gender</button>
+        <h2 className="fave">Favourite:{faveNamesButtons}</h2>
+        <hr className="line" />
         <div className="nameButtons">{buttonsOfNames}</div>
       </div>
     </>

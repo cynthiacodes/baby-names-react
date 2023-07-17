@@ -23,6 +23,7 @@
 .femaleName,
 .maleName {
   padding: 10px 10px 10px 10px;
+  justify-self: center;
 }
 
 h1 {
@@ -58,6 +59,8 @@ input {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
+  justify-self: center;
+  width: 40%;
 }
 
 input:focus {
@@ -66,14 +69,40 @@ input:focus {
 
 .mainGrid {
   display: grid;
-  /* place-items: center; */
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
+  grid-template-areas:
+    " .  s   . ."
+    " .  fil . ."
+    " .  f  .  ."
+    " .  l  .  . "
+    " .  b  .  .";
 }
 
 .nameButtons {
-  grid-gap: 5px;
+  /* grid-gap: 5px; */
   border: 2px solid #fad3b2;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
+  grid-area: b;
+  grid-auto-rows: 50px;
 }
+
+.fave {
+  justify-self: start;
+  grid-area: f;
+}
+
+.filter {
+  justify-self: center;
+  grid-area: fil;
+}
+
+.searchBar {
+  grid-area: s;
+}
+
+.line {
+  grid-area: l;
+}
+
