@@ -7,10 +7,10 @@ interface Button{
 
 
 export function buttonId(buttonData: Button): string{
-    if (buttonData.gender.toLowerCase() === "f") {
+    if (buttonData.gender === "f") {
         return "girlButton";
        
-      } else if (buttonData.gender.toLowerCase() === "m") {
+      } else if (buttonData.gender === "m") {
         return "boyButton";
         
       } else {
