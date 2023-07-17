@@ -64,6 +64,7 @@ export function BabyName(): JSX.Element {
         className="filter"
         key={button.name}
         value={button.gender}
+        onClick={()=> console.log('this button has been clicked', button.name)}
       >
         <img  className = "icon" src={button.icon} alt="" />
       </button>
