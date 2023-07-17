@@ -73,7 +73,7 @@ input:focus {
   grid-gap: 10px;
   grid-template-areas:
     " s  s  s  s"
-    " .  a  g  b"
+    " .  g  m  a"
     " f  f  f  f "
     " l  l  l  l "
     " b  b  b  b";
@@ -93,13 +93,13 @@ input:focus {
   grid-area: f;
 }
 
-.filter {
+/* .filter {
   /* justify-self: center; */
-  grid-area: fil;
+  /* grid-area: fil;
   font-size: 16px;
   border-radius: 12px;
   width: 20%;
-}
+ */ 
 
 .searchBar {
   grid-area: s;
@@ -109,14 +109,14 @@ input:focus {
   grid-area: l;
 }
 
-#girlButton{
-    grid-area: g;
+#girlButton {
+  grid-area: g;
 }
 
-#boyButton{
-    grid-area: b;
+#boyButton {
+  grid-area: m;
 }
 
-#allButton{
-    grid-area: a;
+#allButton {
+  grid-area: a;
 }
