@@ -79,13 +79,16 @@ input:focus {
 }
 
 .nameButtons {
-  /* grid-gap: 5px; */
   border: 2px solid #fad3b2;
   padding: 5px;
   border-radius: 5px;
   grid-area: b;
-  grid-auto-rows: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-flow: row;
+  gap: 5px;
 }
+
 
 .fave {
   justify-self: start;
