@@ -2,6 +2,8 @@ import { useState } from "react";
 import { babyNamesData } from "../utils/babyNamesData";
 import { ascOrder } from "../utils/ascOrder";
 import "./BabyApp.css";
+import { filterButtons } from "../utils/filterButtonsData";
+import { buttonId } from "../utils/buttonId";
 
 interface Baby {
   id: number;
@@ -55,6 +57,14 @@ export function BabyName(): JSX.Element {
     </button>
   ));
 
+  const filterGenderButtons = filterButtons.map((button) => (
+    <>
+    <button id = {buttonId(button)} className="filter" key={button.name} value={button.gender}>
+     {button.name}
+    </button>
+    </>
+  ));
+
   return (
     <>
       <h1>Baby Names App</h1>
@@ -64,8 +74,8 @@ export function BabyName(): JSX.Element {
           placeholder="Search Baby Name"
           onChange={handleQuery}
           value={query}
-        />{" "}
-        <button className="filter">gender</button>
+        />
+        {filterGenderButtons}
         <h2 className="fave">Favourite:{faveNamesButtons}</h2>
         <hr className="line" />
         <div className="nameButtons">{buttonsOfNames}</div>
