@@ -89,7 +89,6 @@ input:focus {
   gap: 5px;
 }
 
-
 .fave {
   justify-self: start;
   grid-area: f;
