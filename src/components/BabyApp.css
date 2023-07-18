@@ -1,0 +1,129 @@
+.femaleName {
+  background-color: #ffe181;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.femaleName:hover {
+  background-color: #ffeaf2;
+  color: #e08e79;
+}
+
+.maleName {
+  background-color: #eee9e5;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.maleName:hover {
+  background-color: #d0ecea;
+  color: #44749d;
+}
+
+.femaleName,
+.maleName {
+  padding: 10px 10px 10px 10px;
+  justify-self: center;
+}
+
+h1 {
+  color: #ffba7f;
+  text-align: center;
+}
+
+h2 {
+  color: #ffba7f;
+  text-align: left;
+}
+body {
+  background-color: #fffee4;
+}
+
+hr {
+  width: 100%;
+  height: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #eee9e5;
+  border: 0 none;
+  border-radius: 10px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  border: 2px solid #fad3b2;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  justify-self: center;
+  width: 40%;
+}
+
+input:focus {
+  border: 3px solid #eee9e5;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-areas:
+    " s  s  s  s"
+    " a  g  m  ."
+    " f  f  f  f "
+    " l  l  l  l "
+    " b  b  b  b";
+}
+
+.nameButtons {
+  border: 2px solid #fad3b2;
+  padding: 5px;
+  border-radius: 5px;
+  grid-area: b;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-flow: row;
+  gap: 5px;
+}
+
+.fave {
+  justify-self: start;
+  grid-area: f;
+}
+
+.filter {
+  background-color: inherit;
+  border: none;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+}
+
+.searchBar {
+  grid-area: s;
+}
+
+.line {
+  grid-area: l;
+}
+
+#girlButton {
+  grid-area: g;
+  margin-right: -15px;
+  justify-self: end;
+}
+
+#boyButton {
+  grid-area: m;
+  justify-self: end;
+}
+
+#allButton {
+  grid-area: a;
+  justify-self: end;
+}
