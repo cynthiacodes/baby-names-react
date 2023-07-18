@@ -4,6 +4,7 @@ import { ascOrder } from "../utils/ascOrder";
 import "./BabyApp.css";
 import { filterButtons } from "../utils/filterButtonsData";
 import { buttonId } from "../utils/buttonId";
+import { filterBabyNames } from "../utils/filterBabyNames";
 
 interface Baby {
   id: number;
@@ -24,7 +25,7 @@ export function BabyName(): JSX.Element {
     <button
       onClick={() => moveToFaveClick(baby)}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
-      key={baby.id}
+      key={baby.name}
     >
       {baby.name}
     </button>
@@ -57,19 +58,27 @@ export function BabyName(): JSX.Element {
     </button>
   ));
 
+  const handleFilter = (gender: string) => {
+    console.log(gender);
+    if (gender !== "all"){
+        setMainList(filterBabyNames(gender))
+    }else{
+        setMainList(babyNamesData);
+    }
+  }
+
   const filterGenderButtons = filterButtons.map((button) => (
-    <>
       <button
         id={buttonId(button)}
         className="filter"
+        value={button.gender}                                                                                                   
         key={button.name}
-        value={button.gender}
-        onClick={() => console.log("this button has been clicked", button.name)}
+        onClick={ () => handleFilter(button.gender)}
       >
         <img className="icon" src={button.icon} alt="" />
       </button>
-    </>
   ));
+
 
   return (
     <>
