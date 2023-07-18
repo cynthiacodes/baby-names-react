@@ -70,7 +70,6 @@ export function BabyName(): JSX.Element {
     <button
       id={buttonId(button)}
       className="filter"
-      value={button.gender}
       key={button.name}
       onClick={() => handleFilter(button.gender)}
     >
