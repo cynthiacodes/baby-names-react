@@ -7,10 +7,7 @@ import { buttonId } from "../utils/buttonId";
 import { filterBabyNames } from "../utils/filterBabyNames";
 import useSound from "use-sound";
 import highPitchSfx from "../sounds/highPitchSfx.mp3";
-import popSfx from "../sounds/popSfx.mp3"
-
-
-
+import popSfx from "../sounds/popSfx.mp3";
 
 interface Baby {
   id: number;
@@ -22,8 +19,8 @@ export function BabyName(): JSX.Element {
   const [mainList, setMainList] = useState<Baby[]>(babyNamesData);
   const [query, setQuery] = useState<string>("");
   const [favourite, setFavourite] = useState<Baby[]>([]);
-  const [playClick] = useSound(highPitchSfx, {volume: 0.5});
-  const [playPop] = useSound(popSfx,{volume: 0.5});
+  const [playClick] = useSound(highPitchSfx, { volume: 0.5 });
+  const [playPop] = useSound(popSfx, { volume: 0.5 });
 
   const sortedBabyData = mainList.sort(ascOrder);
   const filteredSearchData = sortedBabyData.filter((baby) =>
@@ -31,7 +28,10 @@ export function BabyName(): JSX.Element {
   );
   const buttonsOfNames = filteredSearchData.map((baby) => (
     <button
-      onClick={() => {moveToFaveClick(baby); playClick()}}
+      onClick={() => {
+        moveToFaveClick(baby);
+        playClick();
+      }}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.name}
     >
@@ -58,7 +58,10 @@ export function BabyName(): JSX.Element {
 
   const faveNamesButtons = favourite.map((baby) => (
     <button
-      onClick={() => {moveToMainList(baby);playClick()}}
+      onClick={() => {
+        moveToMainList(baby);
+        playClick();
+      }}
       className={baby.sex === "f" ? "femaleName" : "maleName"}
       key={baby.id}
     >
@@ -79,7 +82,10 @@ export function BabyName(): JSX.Element {
       id={buttonId(button)}
       className="filter"
       key={button.name}
-      onClick={() => {handleFilter(button.gender); playPop()}}
+      onClick={() => {
+        handleFilter(button.gender);
+        playPop();
+      }}
     >
       <img className="icon" src={button.icon} alt="" />
     </button>
