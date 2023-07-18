@@ -59,7 +59,6 @@ export function BabyName(): JSX.Element {
   ));
 
   const handleFilter = (gender: string) => {
-    console.log(gender);
     if (gender !== "all") {
       setMainList(filterBabyNames(gender));
     } else {
