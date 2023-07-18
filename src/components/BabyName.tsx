@@ -60,25 +60,24 @@ export function BabyName(): JSX.Element {
 
   const handleFilter = (gender: string) => {
     console.log(gender);
-    if (gender !== "all"){
-        setMainList(filterBabyNames(gender))
-    }else{
-        setMainList(babyNamesData);
+    if (gender !== "all") {
+      setMainList(filterBabyNames(gender));
+    } else {
+      setMainList(babyNamesData);
     }
-  }
+  };
 
   const filterGenderButtons = filterButtons.map((button) => (
-      <button
-        id={buttonId(button)}
-        className="filter"
-        value={button.gender}                                                                                                   
-        key={button.name}
-        onClick={ () => handleFilter(button.gender)}
-      >
-        <img className="icon" src={button.icon} alt="" />
-      </button>
+    <button
+      id={buttonId(button)}
+      className="filter"
+      value={button.gender}
+      key={button.name}
+      onClick={() => handleFilter(button.gender)}
+    >
+      <img className="icon" src={button.icon} alt="" />
+    </button>
   ));
-
 
   return (
     <>
