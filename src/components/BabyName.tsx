@@ -6,8 +6,6 @@ import { filterButtons } from "../utils/filterButtonsData";
 import { buttonId } from "../utils/buttonId";
 import { filterBabyNames } from "../utils/filterBabyNames";
 import useSound from "use-sound";
-import highPitchSfx from "../sounds/highPitchSfx.mp3";
-import popSfx from "../sounds/popSfx.mp3";
 
 interface Baby {
   id: number;
@@ -19,8 +17,11 @@ export function BabyName(): JSX.Element {
   const [mainList, setMainList] = useState<Baby[]>(babyNamesData);
   const [query, setQuery] = useState<string>("");
   const [favourite, setFavourite] = useState<Baby[]>([]);
-  const [playClick] = useSound(highPitchSfx, { volume: 0.5 });
-  const [playPop] = useSound(popSfx, { volume: 0.5 });
+
+  const soundPitchURL = "./sounds/highPitchSfx.mp3";
+  const soundPopURL = "./sounds/popSfx.mp3";
+  const [playPop] = useSound(soundPopURL, { volume: 0.5 });
+  const [playClick] = useSound(soundPitchURL, { volume: 0.5 });
 
   const sortedBabyData = mainList.sort(ascOrder);
   const filteredSearchData = sortedBabyData.filter((baby) =>
